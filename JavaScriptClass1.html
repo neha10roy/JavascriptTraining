@@ -1,0 +1,94 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<script>
+			function conditionalLogic()
+			{
+				var myGreeting;
+				var currentdate = new Date();
+				
+				var monthNo = currentdate.getMonth(); // returns integer between 0 to 11.
+				monthNo = monthNo+1;
+				var date = currentdate.getDate();
+				var year = currentdate.getFullYear();
+				
+				var hour = currentdate.getHours();
+				
+				var month = null;
+				switch(monthNo)
+				{
+					case 1: month = "January";
+					break;
+					case 2: month = "February";
+					break;
+					case 3: month = "March";
+					break;
+					case 4: month = "April";
+					break;
+					case 5: month = "May";
+					break;
+					case 6: month = "June";
+					break;
+					case 7: month = "July";
+					break;
+					case 8: month = "August";
+					break;
+					case 9: month = "September";
+					break;
+					case 10: month = "October";
+					break;
+					case 11: month = "November";
+					break;
+					case 11: month = "December";
+					break;
+				}
+				
+				myGreeting = "Today is " + date + " day of " + month + " in the year " + year;
+				
+				if(hour >= 6 && hour<=12)
+					myGreeting += " Good Morning";
+				else if (hour >= 12 && hour<=17)
+					myGreeting += " Good Afternoon";
+				else if (hour>=17 && hour<=21)
+					myGreeting += " Good evening";
+				else
+					myGreeting+= " Good Night";
+				
+				alert(myGreeting);
+				
+			}
+			
+			function LoopingConstructs()
+			{
+			
+				var fruits = new Array('Apple', 'Orange', 'Grapes', 'Pears','Guava');
+				var strAllNames = "";
+				for( a of fruits)
+				{
+					strAllNames += a +"\n";
+				}
+				
+				alert(strAllNames);
+				
+				for(i=0; i<fruits.length; i++)
+				{
+					alert( i + "- th fruit is "+ fruits[i]);
+				}
+				var j= fruits.length;
+				alert("Fruits in reverse order");
+				while( j > 0)
+				{
+					alert( j + "- th fruit is "+ fruits[j-1]);
+					j--;
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" text="GreetMe" value="GreetMe" onclick="conditionalLogic();"/>
+		<input type="button" text="FavouriteFruits" value="FavouriteFruits" onclick="LoopingConstructs();"/>
+		<input type="button" text="Calc" value ="Calc" onclick=
+	</body>
+
+</html>
